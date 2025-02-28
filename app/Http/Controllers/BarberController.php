@@ -48,7 +48,7 @@ class BarberController extends Controller
                 [
                     'required' => 'A(z) :attribute mező megadása kötelező!',
                     'integer' => 'A(z) :attribute mezőnek szöveg típusúnak kell lennie!',
-                    'exists' => 'Nem létezik ilyen nevű barber'
+                    'exists' => 'Nem létezik barber ezzel az id-val'
                 ]
             );
         }
@@ -63,7 +63,7 @@ class BarberController extends Controller
         }
         catch(Exception $e)
         {
-            return response()->json(['success' => false, 'message' => "Sikertelen törlés!"], 400, options: JSON_UNESCAPED_UNICODE);
+            return response()->json(['success' => false, 'message' => $e], 400, options: JSON_UNESCAPED_UNICODE);
         }
 
         return response()->json(['success' => true, 'message' => "Sikeres törlés"], 200, options: JSON_UNESCAPED_UNICODE);
