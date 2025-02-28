@@ -49,7 +49,7 @@ class AppointmentController extends Controller
                 [
                     'required' => 'A(z) :attribute mező megadása kötelező!',
                     'integer' => 'A(z) :attribute mezőnek integer típusúnak kell lennie',
-                    'exists' => 'Nem létezik barber ezzel az id-val'
+                    'exists' => 'Nem létezik appointment ezzel az id-val'
                 ]
             );
         } catch (ValidationException $e) {
