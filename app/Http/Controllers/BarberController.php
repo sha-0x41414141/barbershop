@@ -10,7 +10,8 @@ class BarberController extends Controller
 {
     public function index()
     {
-
+        $barbers = Barber::all();
+        return response()->json($barbers, 200, options: JSON_UNESCAPED_UNICODE);
     }
 
     public function store(Request $request)
