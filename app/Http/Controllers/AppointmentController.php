@@ -10,7 +10,8 @@ class AppointmentController extends Controller
 {
     public function index()
     {
-
+        $appointment = Appointment::load("barber");
+        return response()->json($appointment, 200, options: JSON_UNESCAPED_UNICODE);
     }
     public function store(Request $request)
     {
